@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .calculator input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .calculator button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" disabled>
+        <input type="text" id="input" placeholder="Digite o cálculo">
+        <button onclick="calculate()">Calcular</button>
+    </div>
+
+    <script>
+        function calculate() {
+            const input = document.getElementById('input').value;
+            try {
+                const result = eval(input);
+                document.getElementById('result').value = result;
+            } catch (e) {
+                document.getElementById('result').value = 'Erro';
+            }
+        }
+    </script>
+</body>
+</html>
